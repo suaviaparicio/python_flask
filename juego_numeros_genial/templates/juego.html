@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block styles %} 
+    <link rel="stylesheet" href="static/juego.css">
+    {% endblock %}  <!-- Un bloque de estilos que por defecto no va a tener nada , pero si alguien lo quiere sobreescribir, depende de los templates hijos  -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">¡Bienvenido al juego de números genial!</h1>
+        <h3 class="subtitulo">Estoy pensando en un número del 1 al 100, ¿Quieres adivinarlo? </h3>
+        <div class="resultado {% if session.get('clase') %}
+        red {{ session.clase }} {{% endif %}}">
+        
+        {% if session.get('clase') %}
+            {% if session.clase == 'red' %}
+                <h2 style="text-align: center;">El número es más pequeño</h2>
+            {% elif session.clase == 'orange' %}
+                <h2 style="text-align: center;">El número es más grande</h2>
+            {% else %}
+                <h2 style="text-align: center;">¡Felicitaciones! Adivinaste, el número era el {{ session.num }}</h2>
+                <div>
+                    <a href="/clear" class="boton2">Jugar otra vez</a>
+                </div>
+                <p>Tuviste {{ session.intentos }} intentos</p>
+            {% endif %}
+        {% endif %}
+        </div>
+        <form action="/adivinar" method="post" class="numero" style="width: 200px;">
+            <h4>Inténtalo!!!</h4>
+            <input type="number" min="1" max="100" name="intento" required style="border-radius: 5px;">
+            <div>
+                <button type="submit" class="boton" style="width: 70px; height: 25px; margin: 15px">Adivinar</button>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
+</html>
+
+

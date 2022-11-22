@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de ajedrez</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <style>
+
+    </style>
+    <div class="container">
+        <h2 class="titulo">Tablero de Ajedrez</h2>
+        <div class="Tablero">
+            {% for i in range(altura) %}
+            <div class="cajas">
+                {% for j in range(fila) %}
+                    {% if (j+i)%2 == 0 %}
+                    <div class="cuadro_blanco" style="background-color: {{color_blanco}};" ></div>
+                    {% else %}
+                    <div class="cuadro_negro" style="background-color: {{color_negro}};"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

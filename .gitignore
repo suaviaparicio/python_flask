@@ -1,0 +1,8 @@
+* .pyc
+.DS_store
+__pycache__
+mi_env
+hola_flask
+form_test
+primera_app
+tienda_frutas_dojo

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patio de juegos</title>
+</head>
+<style>
+    .container{
+        margin-top: 40px;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .cuadro{
+        text-align: center;
+    }   
+    .cajas{
+        width: 70px;
+        height: 70px;
+        border: 2px solid black;
+        background-color: RGB(158, 197, 248);
+        display: inline-block;
+        margin: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="titulo">Welcome!</h1>
+        <div class="cuadro">
+            {% for i in range(num) %}
+            <div class="cajas" style="background-color: {{color}};"></div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

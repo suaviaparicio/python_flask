@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.resultado{
+    background-color: whitesmoke;
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.numero{
+    background-color: RGB(51, 57, 62);
+    color: RGB(251, 192, 9);
+    text-align: center;
+
+}
+
+.boton{
+    background-color: RGB(251, 192, 9);
+    color: RGB(51, 57, 62);
+}
