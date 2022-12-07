@@ -32,7 +32,8 @@ def numero_usuario ():
     print(f"Elegiste el número " + numero)
     numero = int(numero)                        # ------> Lo estamos transformando en número, porque todo lo que llega, llega en tipo texto
     
-    session['num'] += numero
+    session['num'] += numero - 1
+    
 
     return redirect('/')
 
